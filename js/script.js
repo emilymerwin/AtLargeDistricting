@@ -7,5 +7,14 @@
 			success: setUp
 		});
 
+		function setUp(json){
+			json.forEach(function(county){
+				$("#"+county.cID).hover(function () {
+					$(this).css({'stroke-width':3});
+				}, function(){
+					$(this).css({'stroke-width':0.75});
+				});
+			});
+		}//setUp
 	});//$map.load
 }());
