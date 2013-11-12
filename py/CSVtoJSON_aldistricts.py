@@ -14,6 +14,7 @@ for row in reader:
         cID = cID.split()[0]
 
     row['cID'] = cID
+    row['county'] = row['county'].title()
     fixed.append(row)
 
 # Parse the CSV into JSON
