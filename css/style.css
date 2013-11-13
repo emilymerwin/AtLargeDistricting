@@ -4,3 +4,6 @@
 .selected {
 	stroke-width: 5px;
 }
+.hover {
+	stroke-width: 3px;
+}
