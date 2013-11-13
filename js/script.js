@@ -10,6 +10,7 @@
 		function setUp(json){
 			json.forEach(function(county){
 				var me = $("#"+county.cID);
+				me.attr("class", "county "+county.category);
 				var alpha = Math.abs(county.representation/20);
 				if(county.representation <= -10){ //placeholder value, need better buckets from Jeff
 					me.css({'fill':'#d62728', 'fill-opacity': alpha});
@@ -27,6 +28,16 @@
 					$(this).css({'stroke-width':3});
 				}, function(){
 					$(this).css({'stroke-width':0.75});
+				});
+			}); //json.forEach
+
+			$(".btn").on("click", function(e){
+				$(".county").each(function(){
+					if(this.classList.contains(e.target.id)){
+						this.classList.add("selected");
+					} else if(this.classList.contains("selected")){
+						this.classList.remove("selected");
+					}
 				});
 			});
 		}//setUp
