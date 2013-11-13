@@ -11,7 +11,7 @@ fixed = []
 
 #convert from decimal percent format to whole number
 def rounder(n):
-    dec = int(decimal.Decimal(n)*100)
+    dec = int(round(decimal.Decimal(n), 2)*100)
     return str(dec)
 
 for row in reader:
