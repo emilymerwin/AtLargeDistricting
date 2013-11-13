@@ -9,7 +9,15 @@
 
 		function setUp(json){
 			json.forEach(function(county){
-				$("#"+county.cID).popover({
+				var me = $("#"+county.cID);
+				var alpha = Math.abs(county.representation/20);
+				if(county.representation <= -10){ //placeholder value, need better buckets from Jeff
+					me.css({'fill':'#d62728', 'fill-opacity': alpha});
+				} else if (county.representation >= 10){
+					me.css({'fill':'#2ca02c', 'fill-opacity': alpha});
+				}
+
+				me.popover({
 					trigger: "hover",
 					title: county.county,
 					html: true,
