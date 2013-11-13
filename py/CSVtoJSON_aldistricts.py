@@ -30,6 +30,7 @@ for row in reader:
         cID = cID.split()[0]
 
     row['cID'] = cID
+    row['county'] = row['county'] + " County"
     row['blkvoters'] = rounder(row['blkvoters'])
     row['blkofficials'] = rounder(row['blkofficials'])
     row['representation'] = rounder(row['representation'])
