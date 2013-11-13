@@ -26,6 +26,9 @@
 					container: $("#tip")
 				}).hover(function () {
 					$(this).css({'stroke-width':3});
+					//SVG does not support Z-index, so in order to get this element on top it needs to be moved up in the DOM
+					var tmp = $(this).detach();
+					$("svg").append(tmp);
 				}, function(){
 					$(this).css({'stroke-width':0.75});
 				});
