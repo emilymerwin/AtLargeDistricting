@@ -9,7 +9,13 @@
 
 		function setUp(json){
 			json.forEach(function(county){
-				$("#"+county.cID).hover(function () {
+				$("#"+county.cID).popover({
+					trigger: "hover",
+					title: county.county,
+					html: true,
+					content: "<p>Share black voters: "+county.blkvoters+"%</p><p>Share black officials: "+county.blkofficials+"%</p><p>Under/over representation: "+county.representation+"%</p>",
+					container: $("#tip")
+				}).hover(function () {
 					$(this).css({'stroke-width':3});
 				}, function(){
 					$(this).css({'stroke-width':0.75});
