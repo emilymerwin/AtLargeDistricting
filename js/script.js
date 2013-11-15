@@ -35,20 +35,39 @@
 			}); //json.forEach
 
 			$(".btn").on("click", function(e){
-				$(".county").each(function(){
-					if(!this.op){
-						this.op = $(this).css('fill-opacity'); //so we can reset it later
-					}
-					if(this.classList.contains(e.target.id)){
-						this.classList.add("selected");
-						$(this).css({ 'fill-opacity': this.op });
-						var tmp = $(this).detach();
-						$("svg").append(tmp);
-					} else {
+				var btn = $(e.target);
+				if(btn.hasClass("btn-primary")){ //button was already selected, restore defaults
+					btn.removeClass("btn-primary");
+					$(".county").each(function(){
 						if(this.classList.contains("selected")){
 							this.classList.remove("selected");
+						} else {
+							$(this).css({ 'fill-opacity': this.op });
 						}
-						$(this).css({ 'fill-opacity': (this.op * .25) });
+					});
+				} else {
+					btn.addClass("btn-primary");
+					$(".county").each(function(){
+						if(!this.op){
+							this.op = $(this).css('fill-opacity'); //so we can reset it later
+						}
+						if(this.classList.contains(e.target.id)){
+							this.classList.add("selected");
+							$(this).css({ 'fill-opacity': this.op });
+							var tmp = $(this).detach();
+							$("svg").append(tmp);
+						} else {
+							if(this.classList.contains("selected")){
+								this.classList.remove("selected");
+							}
+							$(this).css({ 'fill-opacity': (this.op * .25) });
+						}
+					});
+				}
+
+				$(".btn").each(function(){ //deselect other buttons
+					if(this.id != e.target.id && $(this).hasClass("btn-primary")){
+						$(this).removeClass("btn-primary");
 					}
 				});
 			});//btn.on
