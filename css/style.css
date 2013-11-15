@@ -5,5 +5,6 @@
 	stroke-width: 3px;
 }
 .hover {
-	stroke-width: 3px;
+	stroke: #1F77B4;
+	stroke-width: 4px;
 }
