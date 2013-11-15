@@ -36,13 +36,22 @@
 
 			$(".btn").on("click", function(e){
 				$(".county").each(function(){
+					if(!this.op){
+						this.op = $(this).css('fill-opacity'); //so we can reset it later
+					}
 					if(this.classList.contains(e.target.id)){
 						this.classList.add("selected");
-					} else if(this.classList.contains("selected")){
-						this.classList.remove("selected");
+						$(this).css({ 'fill-opacity': this.op });
+						var tmp = $(this).detach();
+						$("svg").append(tmp);
+					} else {
+						if(this.classList.contains("selected")){
+							this.classList.remove("selected");
+						}
+						$(this).css({ 'fill-opacity': (this.op * .25) });
 					}
 				});
-			});
+			});//btn.on
 		}//setUp
 	});//$map.load
 }());
