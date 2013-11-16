@@ -16,6 +16,8 @@
 					me.css({'fill':'#d62728', 'fill-opacity': alpha});
 				} else if (county.representation >= 10){
 					me.css({'fill':'#2ca02c', 'fill-opacity': alpha});
+				} else {
+					me.css({'fill':'#F0F0F0', 'fill-opacity': 1});
 				}
 
 				me.popover({
@@ -42,6 +44,7 @@
 						if(this.classList.contains("selected")){
 							this.classList.remove("selected");
 						} else {
+							this.classList.remove("muted");
 							$(this).css({ 'fill-opacity': this.op });
 						}
 					});
@@ -52,6 +55,9 @@
 							this.op = $(this).css('fill-opacity'); //so we can reset it later
 						}
 						if(this.classList.contains(e.target.id)){
+							if(this.classList.contains("muted")){
+								this.classList.remove("muted");
+							}
 							this.classList.add("selected");
 							$(this).css({ 'fill-opacity': this.op });
 							var tmp = $(this).detach();
@@ -60,6 +66,7 @@
 							if(this.classList.contains("selected")){
 								this.classList.remove("selected");
 							}
+							this.classList.add("muted");
 							$(this).css({ 'fill-opacity': (this.op * .25) });
 						}
 					});

@@ -2,7 +2,11 @@
 	strong-width: 1px;
 }
 .selected {
-	stroke-width: 3px;
+	stroke-width: 2px;
+	stroke: #000;
+}
+.muted {
+	stroke: #909090;
 }
 .hover {
 	stroke: #1F77B4;
