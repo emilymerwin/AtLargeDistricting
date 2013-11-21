@@ -11,11 +11,11 @@
 			json.forEach(function(county){
 				var me = $("#"+county.cID);
 				me.attr("class", "county "+county.category);
-				var alpha = Math.abs(county.representation/20);
+				var alpha = Math.abs(county.representation/40);
 				if(county.representation <= -10){ //placeholder value, need better buckets from Jeff
-					me.css({'fill':'#d62728', 'fill-opacity': alpha});
+					me.css({'fill':'#344A93', 'fill-opacity': alpha});
 				} else if (county.representation >= 10){
-					me.css({'fill':'#2ca02c', 'fill-opacity': alpha});
+					me.css({'fill':'#E6550D', 'fill-opacity': alpha});
 				} else {
 					me.css({'fill':'#F0F0F0', 'fill-opacity': 1});
 				}
