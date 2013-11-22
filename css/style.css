@@ -1,9 +1,5 @@
-.county {
-	strong-width: 1px;
-}
 .selected {
 	stroke-width: 2px;
-	stroke: #000;
 }
 .muted {
 	stroke: #909090;
