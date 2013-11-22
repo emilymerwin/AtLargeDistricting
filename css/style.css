@@ -12,3 +12,19 @@
 	stroke: #1F77B4;
 	stroke-width: 4px;
 }
+#legend {
+	position: absolute;
+	top: 30px;
+	left: 420px;
+}
+#legend span {
+	display: inline-block;
+	width: 15px;
+	height: 10px;
+	border: .75px solid #555555;
+}
+#legend .item {
+	padding: 5px;
+	width: 100%;
+	float: left;
+}
