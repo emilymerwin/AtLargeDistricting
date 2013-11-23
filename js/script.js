@@ -1,4 +1,5 @@
 (function() {
+	var wht = "#344A93", blk = "#E6550D";
 	$('#map').load('assets/ga_counties.svg', null, function(data) {
 		$.ajax({
 			type: "GET",
@@ -13,9 +14,9 @@
 				me.attr("class", "county "+county.category);
 				var alpha = Math.abs(county.representation/40);
 				if(county.representation <= -10){ //placeholder value, need better buckets from Jeff
-					me.css({'fill':'#344A93', 'fill-opacity': alpha});
+					me.css({'fill': wht, 'fill-opacity': alpha});
 				} else if (county.representation >= 10){
-					me.css({'fill':'#E6550D', 'fill-opacity': alpha});
+					me.css({'fill': blk, 'fill-opacity': alpha});
 				} else {
 					me.css({'fill':'#F0F0F0', 'fill-opacity': 1});
 				}
@@ -24,7 +25,7 @@
 					trigger: "hover",
 					title: county.county,
 					html: true,
-					content: "<p>Commision elections: " + county.category + " at large</p><p>Share black voters: "+county.blkvoters+"%</p><p>Share black officials: "+county.blkofficials+"%</p><p>Under/over representation: "+county.representation+"%</p>",
+					content: "<p>Commision elections: " + county.category + " at large</p><p>Share black voters: " + county.blkvoters + "%</p><p>Share black officials: " + county.blkofficials + "%</p><p>" + overUnder(county.representation) + "%</p>",
 					container: $("#tip")
 				}).hover(function () {
 					this.classList.add("hover");
@@ -35,6 +36,14 @@
 					this.classList.remove("hover");
 				});
 			}); //json.forEach
+
+			function overUnder(rep){
+				if(rep > 0){
+					return "Blacks <span style='color:" + blk + "'><strong>overrepresentated</strong></span>: " + rep;
+				} else {
+					return "Blacks <span style='color:" + wht + "'><strong>underrepresented</strong></span>: " + Math.abs(rep);
+				}
+			}
 
 			$(".btn").on("click", function(e){
 				var btn = $(e.target);
