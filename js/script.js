@@ -24,7 +24,7 @@
 					trigger: "hover",
 					title: county.county,
 					html: true,
-					content: "<p>Share black voters: "+county.blkvoters+"%</p><p>Share black officials: "+county.blkofficials+"%</p><p>Under/over representation: "+county.representation+"%</p>",
+					content: "<p>Commision elections: " + county.category + " at large</p><p>Share black voters: "+county.blkvoters+"%</p><p>Share black officials: "+county.blkofficials+"%</p><p>Under/over representation: "+county.representation+"%</p>",
 					container: $("#tip")
 				}).hover(function () {
 					this.classList.add("hover");

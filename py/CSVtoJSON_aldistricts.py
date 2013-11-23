@@ -29,11 +29,15 @@ for row in reader:
     if ' ' in cID:
         cID = cID.split()[0]
 
+    cat = row['category'].split("_")[0].lower()
+    row['category'] = cat
+
     row['cID'] = cID
     row['county'] = row['county'] + " County"
     row['blkvoters'] = rounder(row['blkvoters'])
     row['blkofficials'] = rounder(row['blkofficials'])
     row['representation'] = rounder(row['representation'])
+
     fixed.append(row)
 
 # Parse the CSV into JSON
