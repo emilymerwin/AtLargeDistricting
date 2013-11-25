@@ -24,3 +24,12 @@
 	width: 100%;
 	float: left;
 }
+.metainfo {
+	margin-left: 5px;
+	color: #777;
+	font-size: 11px;
+}
+#table {
+	max-width: 750px;
+	font-size: 12px;
+}

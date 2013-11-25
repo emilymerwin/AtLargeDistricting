@@ -23,9 +23,9 @@
 
 				me.popover({
 					trigger: "hover",
-					title: county.county,
+					title: county.county + '<span class="metainfo"> ' + county.category + ' at large</span>',
 					html: true,
-					content: "<p>Commision elections: " + county.category + " at large</p><p>Share black voters: " + county.blkvoters + "%</p><p>Share black officials: " + county.blkofficials + "%</p><p>" + overUnder(county.representation) + "%</p>",
+					content: "<p>Share black voters: " + county.blkvoters + "%</p><p>Share black officials: " + county.blkofficials + "%</p><p>" + overUnder(county.representation) + "%</p>",
 					container: $("#tip")
 				}).hover(function () {
 					this.classList.add("hover");
