@@ -1,4 +1,4 @@
-#At large districting
+#At-large districting
 - Goes with story about how electing representatives at-large vs by district tends to prevent black voters from being able to elect representative of their choice. Explores relationship between race and representation by county and their system.
 
 ##Setup
