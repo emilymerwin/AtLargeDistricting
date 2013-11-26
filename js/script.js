@@ -9,6 +9,19 @@
 		});
 
 		function setUp(json){
+			//build data table HTML
+			$.getJSON("data/votingtable.json" , function(data){
+				var tbl_body = "";
+				$.each(data, function(){
+					var tbl_row = "";
+					$.each(this, function(k , v){
+						tbl_row += "<td>" + v + "</td>";
+					});
+					tbl_body += "<tr>" + tbl_row + "</tr>";
+				});
+				$("#table tbody").html(tbl_body);
+			});
+
 			json.forEach(function(county){
 				var me = $("#"+county.cID);
 				me.attr("class", "county "+county.category);
