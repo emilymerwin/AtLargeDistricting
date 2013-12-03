@@ -52,9 +52,9 @@
 
 			function overUnder(rep){
 				if(rep > 0){
-					return "Blacks <span style='color:" + blk + "'><strong>overrepresented</strong></span>: " + rep;
+					return "Blacks <span style='color:" + blk + "'><strong>overrepresented</strong></span> by: " + rep;
 				} else {
-					return "Blacks <span style='color:" + wht + "'><strong>underrepresented</strong></span>: " + Math.abs(rep);
+					return "Blacks <span style='color:" + wht + "'><strong>underrepresented</strong></span> by: " + Math.abs(rep);
 				}
 			}
 
