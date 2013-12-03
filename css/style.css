@@ -1,3 +1,6 @@
+#container {
+	max-width: 960px;
+}
 .selected {
 	stroke-width: 2px;
 }
@@ -7,6 +10,9 @@
 .hover {
 	stroke: #1F77B4;
 	stroke-width: 4px;
+}
+#legend-container {
+	position: relative;
 }
 #legend {
 	position: absolute;
