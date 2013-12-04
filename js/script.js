@@ -62,6 +62,7 @@
 				var btn = $(e.target);
 				if(btn.hasClass("btn-primary")){ //button was already selected, restore defaults
 					btn.removeClass("btn-primary");
+					btn.find(".glyphicon").remove();
 					$(".county").each(function(){
 						if(this.classList.contains("selected")){
 							this.classList.remove("selected");
@@ -72,6 +73,7 @@
 					});
 				} else {
 					btn.addClass("btn-primary");
+					btn.append("<span class='glyphicon glyphicon-remove btn-sm'></span>");
 					$(".county").each(function(){
 						if(!this.op){
 							this.op = $(this).css('fill-opacity'); //so we can reset it later
@@ -97,6 +99,7 @@
 				$(".btn").each(function(){ //deselect other buttons
 					if(this.id != e.target.id && $(this).hasClass("btn-primary")){
 						$(this).removeClass("btn-primary");
+						$(this).find(".glyphicon").remove();
 					}
 				});
 			});//btn.on
