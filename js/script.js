@@ -36,7 +36,7 @@
 
 				me.popover({
 					trigger: "hover",
-					title: county.county + '<span class="metainfo"> ' + county.category + ' at-large</span>',
+					title: county.county + '<span class="metainfo"> ' + county.category + ' at large</span>',
 					html: true,
 					content: "<p>Share black voters: " + county.blkvoters + "%</p><p>Share black officials: " + county.blkofficials + "%</p><p>" + overUnder(county.representation) + "%</p>",
 					container: $("#tip")
