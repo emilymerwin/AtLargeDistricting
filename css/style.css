@@ -46,3 +46,10 @@
 	text-shadow: 1px 1px 1px #555;
 	font-size: 10px;
 }
+td, th {
+	text-align: right;
+	min-width: 18%;
+}
+td:nth-child(1), th:nth-child(1) {
+  text-align: left;
+}
