@@ -73,7 +73,7 @@
 					});
 				} else {
 					btn.addClass("btn-primary");
-					btn.append("<span class='glyphicon glyphicon-remove btn-sm'></span>");
+					btn.append("<span class='glyphicon glyphicon-remove'></span>");
 					$(".county").each(function(){
 						if(!this.op){
 							this.op = $(this).css('fill-opacity'); //so we can reset it later
