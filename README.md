@@ -7,4 +7,5 @@
 
 ###ToDo
 - [ ] Highlight relevent table columns when selecting a filter, or hide the irrelevant ones
-
+- [ ] Filter buttons do not work on mobile
+- [ ] Tooltips cut off on right side of mobile
