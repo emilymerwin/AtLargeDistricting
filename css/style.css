@@ -59,10 +59,14 @@ td:nth-child(1), th:nth-child(1) {
 	width: 550px;
 	height: 540px;
 }
+#printCharts {
+	max-width: 550px;
+}
 @media only screen and (max-width: 550px) {
 	#map { width: 100%; }
 	#legend { position: static; }
 }
 @media only screen and (max-width: 420px) {
 	#map { height: 334px; }
+	#printCharts { width: 100%; }
 }
