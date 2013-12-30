@@ -46,7 +46,7 @@
 					var tmp = $(this).detach();
 					$("svg").append(tmp);
 				}, function(){
-					this.classList.remove("hover");
+					this.classList.remove("hover"); //broken in IE lte 10
 				});
 			}); //json.forEach
 
